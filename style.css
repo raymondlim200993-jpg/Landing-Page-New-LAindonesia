@@ -1115,35 +1115,7 @@ details summary::-webkit-details-marker{display:none}
 }
 
 /* ── CORE WEB VITALS OPTIMIZATIONS ── */
-
-/* Prevent layout shift: reserve space for logo images */
-.logo-img {
-  display: block;
-  width: 200px;
-  max-width: 100%;
-  height: auto;
-  max-height: 82px;
-  object-fit: contain;
-}
-.footer__logo-img{
-  width:auto;height:64px;
-  aspect-ratio:auto;
-}
-
-/* Prevent CLS: explicit dimensions on hero background */
-.hero{
-  content-visibility:auto;
-  contain-intrinsic-size:0 700px;
-}
-
-/* Reduce paint cost on animated elements */
 .announce-bar__track{
-  will-change:transform;
-}
-.fab-wa,
-.sub-card,
-.layanan-card,
-.menu-card{
   will-change:transform;
 }
 
