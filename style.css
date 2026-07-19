@@ -154,38 +154,55 @@ details summary::-webkit-details-marker{display:none}
   border-bottom:1px solid var(--gray-200);
 }
 .navbar__inner {
-  min-height: 96px;
+  min-height: 116px;
+  padding-block: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar__logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 240px;
-  height: 82px;
-  overflow: hidden;
-}
-.navbar__logo .logo-img {
   display: block;
-  width: 100%;
-  height: 100%;
+  flex: 0 0 auto;
+  line-height: 0;
+  overflow: visible;
+}
+
+.navbar__logo .logo-img--header {
+  display: block;
+  width: 320px;
+  height: auto;
   max-width: none;
   max-height: none;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.4);
-  transform-origin: center;
+  transform: none;
 }
 @media (max-width: 899px) {
-  .navbar__logo {
-    width: 165px;
-    height: 60px;
+  .navbar__inner {
+    min-height: 104px;
+    padding-block: 8px;
   }
 
-  .navbar__logo .logo-img {
-    transform: scale(1.35);
+  .navbar__logo .logo-img--header {
+    width: 280px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar__inner {
+    min-height: 84px;
+    padding-block: 7px;
+  }
+
+  .navbar__logo .logo-img--header {
+    width: 205px;
+  }
+}
+
+/* Ganti blok 380px lama dengan ini */
+@media (max-width: 380px) {
+  .navbar__logo .logo-img--header {
+    width: 175px;
   }
 }
 
