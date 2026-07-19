@@ -153,13 +153,45 @@ details summary::-webkit-details-marker{display:none}
   background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--gray-200);
 }
-.navbar__inner{
-  display:flex;align-items:center;justify-content:space-between;
-  height:160px;gap:16px;
+.navbar__inner {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.navbar__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--brown)}
-.navbar__logo .logo-img{height:144px;width:auto;object-fit:contain}
-.navbar__logo .logo-text{font-style:normal}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 240px;
+  height: 82px;
+  overflow: hidden;
+}
+.navbar__logo .logo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.4);
+  transform-origin: center;
+}
+@media (max-width: 899px) {
+  .navbar__logo {
+    width: 165px;
+    height: 60px;
+  }
+
+  .navbar__logo .logo-img {
+    transform: scale(1.35);
+  }
+}
+
+.navbar__logo .logo-text {
+  font-style: normal;
+}
 .navbar__logo .logo-text em{font-style:italic;color:var(--olive)}
 .navbar__links{display:none}
 .navbar__hamburger{
@@ -639,7 +671,9 @@ details summary::-webkit-details-marker{display:none}
 @media(max-width:767px){.step__arrow{transform:rotate(90deg)}}
 
 /* ── SUBSCRIPTION / PAKET PILIHAN ── */
-.subscription{background:var(--cream)}
+.subscription {
+  background: var(--off-white);
+}
 .subscription__grid{
   display:grid;grid-template-columns:1fr;gap:24px;
 }
@@ -669,8 +703,12 @@ details summary::-webkit-details-marker{display:none}
 .sub-card__title{
   font-size:1.2rem;font-weight:700;color:var(--brown);margin:0;line-height:1.3;
 }
-.sub-card__desc{
-  font-size:.92rem;color:var(--text-dark);line-height:1.65;margin:0;flex:1;
+.sub-card__desc {
+  font-size: .92rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
 }
 .sub-card__highlight{
   font-size:.85rem;font-weight:600;color:var(--brown);
@@ -852,9 +890,13 @@ details summary::-webkit-details-marker{display:none}
 /* ── CORE WEB VITALS OPTIMIZATIONS ── */
 
 /* Prevent layout shift: reserve space for logo images */
-.logo-img{
-  width:auto;height:144px;
-  aspect-ratio:auto;
+.logo-img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  max-height: 82px;
+  object-fit: contain;
 }
 .footer__logo-img{
   width:auto;height:64px;
