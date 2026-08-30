@@ -1132,3 +1132,62 @@ details summary::-webkit-details-marker{display:none}
 @media print{
   .navbar,.fab-wa,.hero__scroll,.sticky-cta,.announce-bar{display:none}
 }
+
+/* ===== FIX LOGO NAVBAR ===== */
+
+.navbar__inner {
+    min-height: 90px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar__logo .logo-img {
+    width: 240px !important;
+    max-width: 240px !important;
+    height: 80px !important;
+    max-height: 80px !important;
+    object-fit: contain !important;
+    object-position: left center;
+    display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .navbar__logo .logo-img {
+        width: 210px !important;
+        max-width: 210px !important;
+        height: 70px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar__inner {
+        min-height: 72px !important;
+    }
+
+    .navbar__logo .logo-img {
+        width: 180px !important;
+        max-width: 180px !important;
+        height: 60px !important;
+        max-height: 60px !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .navbar__logo .logo-img {
+        width: 155px !important;
+        max-width: 155px !important;
+        height: 52px !important;
+        max-height: 52px !important;
+    }
+}
